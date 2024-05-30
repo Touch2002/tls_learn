@@ -49,3 +49,4 @@ openssl rsa -in my_private_key.key -pubout > my_public_key.pub
 openssl req -x509 -new -key my_private_key.key -days 365 -out mycert.pem
 ```
 Далі потрібно ввести дані сертифікату, почергово, слідуючи підсказкам (вони англійською).
+

@@ -31,16 +31,4 @@ Connections->SSH->Auth->Credentials. Знаходимо параметр "Privat
 ![alt](putty/paste_privatekey.png)
 9. Далі воджу логін azureuser і ми підключені до віртуальної машини.
 
-# Як створити віртуальну машину azure
-1. Переходжу на портал [azure](https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines)
-2. Натискаю кнопку create, далі натискаю "Azure virtual machine"
-![alt](8.5/create_azure.png)
-3. Далі вписую ім'я віртуальної машини в моєму випадку "virt2"
-![alt](8.5/create_virt2.png)
-4. Далі натискаю "review+create"
-![alt](8.5/create_machine.png)
-5. Далі azure пропонує згенерувати пару ключів ssh, погоджуємось і завантажуємо
-![alt](8.5/generate_key_pair.png)
-6. Тепер чекаємо поки не з'явиться повідомлення нижче і натискаємо "Go to resource"
-![alt](8.5/deployment_is_complete.png)
-Далі йдемо по інструкції як підключитись по ssh за допомогою putty.
+Після підключення потрібно налаштувати [certbot](certbot.md)
