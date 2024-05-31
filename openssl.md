@@ -38,15 +38,29 @@ openssl x509 -text -noout -in cert1.pem
 
 Почнемо з закритого ключа, скористайтеся такою командою, щоб створити закритий ключ:
 ```
-openssl genrsa -out my_private_key.key 2048
+openssl genrsa -out my_private_key.pem 2048
 ```
 Тепер, коли у вас є закритий ключ, створіть із ним відкритий ключ:
 ```
-openssl rsa -in my_private_key.key -pubout > my_public_key.pub
+openssl rsa -in my_private_key.pem -pubout > my_public_key.pub
 ```
 Використовуйте команду нижче, щоб створити свій сертифікат:
 ```
-openssl req -x509 -new -key my_private_key.key -days 365 -out mycert.pem
+openssl req -x509 -new -key my_private_key.pem -days 365 -out mycert.pem
 ```
 Далі потрібно ввести дані сертифікату, почергово, слідуючи підсказкам (вони англійською).
 
+Тепер коли в нас є сертифікат і приватний ключ можна підняти веб-сторінку з самопідписаним ssl-сертифікатом.
+
+Для початку завантажте файл main.exe з каталогу проекту, потім перейменуйте 
+свій приватний ключ як "key.pem" і збережіть сертифікат як "cert.pem",
+після цих маніпуляцій каталог має виглядати таким чином
+![alt](openssl/catalogmain.png)
+
+Після того як ми запустимо програму, якщо ви побачите наступні повідомлення то программа
+працює коректно
+![alt](openssl/correctwork.png)
+
+Тепер залишається перейти на "https://127.0.0.1:5000/" і можна побачити результат роботи
+програми
+![alt](openssl/errorwebok.png)
